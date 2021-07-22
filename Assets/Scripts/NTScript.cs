@@ -62,18 +62,15 @@ public class NTScript : MonoBehaviour
         //Material test = (Material)Resources.Load("test", typeof(Material)); ;
 
 
-        m = new Material(Shader.Find("Unlit/camshader"));
-        rend.material.SetTexture("_MainTex", tex);
+       
 
         if (x > 140 && x < 500 && y > 140 && y < 340)
         {
-            for (int u = x - radius; u < x + radius + 1; u++)
-                for (int v = y - radius; v < y + radius + 1; v++)
-                    if (((x - u) * (x - u) + (y - v) * (y - v)) * 5.6 > rSquared)
-                        tex.SetPixel(u, v, Color.white);
+            m = new Material(Shader.Find("Unlit/camshader"));
+            rend.material.SetTexture("_MainTex", tex);
 
         }
-        else
+       else
         {
             Color[] cols = tex.GetPixels();
             for (int j = 0; j < cols.Length; j++)

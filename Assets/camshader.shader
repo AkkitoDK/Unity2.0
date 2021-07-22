@@ -64,7 +64,7 @@ Shader "Unlit/camshader"
                 // apply fog
                 
                 //col.rgb *= col.a;
-                if ((col.r == 1) && (col.g == 1) && (col.b == 1)) {
+                if ((col.r == 1) && (col.g == 1) && (col.b == 1) && (col.a = 1)) {
 
                     col.a = _Transparency;
 
